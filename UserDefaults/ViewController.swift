@@ -10,9 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  var preferences : UserDefaults = UserDefaults.standard
+
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+
+    self.preferences.set( true, forKey: "fullscreen" )
+    self.preferences.set( 11.9, forKey: "capacity" )
+    self.preferences.setValue( "Hola mundo", forKey: "greetings" )
   }
 
   override func didReceiveMemoryWarning() {
