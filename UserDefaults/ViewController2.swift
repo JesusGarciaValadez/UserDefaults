@@ -16,13 +16,21 @@ class ViewController2: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-      let fullscreen : Bool   = preferences.bool( forKey: "fullscreen" )
-      let capacity : Double   = preferences.double( forKey: "capacity" )
-      let greetings : String  = preferences.string( forKey: "greetings" )!
+      let fullscreenObtained : Bool?   = preferences.bool( forKey: "fullscreen" )
+      let capacityObtained : Double?   = preferences.double( forKey: "capacity" )
+      let greetingsObtained : String?  = preferences.string( forKey: "greetings" )!
 
-      print( fullscreen )
-      print( capacity )
-      print( greetings )
+      if let fullscreen = fullscreenObtained {
+        print( fullscreen )
+      }
+
+      if let capacity = capacityObtained {
+        print( capacity )
+      }
+
+      if let greetings = greetingsObtained {
+        print( greetings )
+      }
     }
 
     override func didReceiveMemoryWarning() {
